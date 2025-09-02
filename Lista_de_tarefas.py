@@ -1,4 +1,4 @@
-tarefas = []
+lista_tarefas = []
 while True:
     print('\n--- Menu ---')
     print('1 - Adicionar tarefa')
@@ -10,28 +10,29 @@ while True:
 
     if opcao == 1:
         tarefa = input('Digite a tarefa: ')
-        tarefas.append(tarefa)
+        lista_tarefas.append(tarefa)
         print('Tarefa adicionada com sucesso!')
 
     elif opcao == 2:
-        if len(tarefas) == 0:
+        if len(lista_tarefas) == 0:
             print('\nNenhuma tarefa cadastrada\n')
         else:
             print('\nLista de tarefas: ')
-        for i, tarefa in enumerate (tarefas, start=1):
-            print(f'{i}. {tarefa}')
+            for x in range(len (lista_tarefas)):
+                print(f'{x + 1} {lista_tarefas[x]}')
+                
 
     elif opcao == 3:
-        if len(tarefas) ==0:
+        if len(lista_tarefas) ==0:
             print('\nNenhuma tarefa para remobver.\n')
         else:
             print('\nTarefas: ')
-        for i, tarefa in enumerate (tarefas, start=1):
-            print(f'{i}. {tarefa}')
+            for x in range(len (lista_tarefas)):
+                print(f'{x + 1} {lista_tarefas[x]}')
 
         num = int(input('Digite o número da tarefa para remover: '))
-        if 1 <= num <= len(tarefas):
-            removida = tarefas.pop(num - 1)
+        if 1 <= num <= len(lista_tarefas):
+            removida = lista_tarefas.pop(num - 1)
             print(f"Tarefa '{removida}' removida com sucesso. ")
         else: print('Número inválido.')
 
